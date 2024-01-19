@@ -84,17 +84,15 @@ public class Counter {
 
 	// TODO: dev3- count the frequency of word in sentence,
 	// refactor source code from dev1 and dev2
-	public static void main(String[] args) {
-        WordFrequencyCounter wordFrequencyCounter = new WordFrequencyCounter();
-        String sentence = "This is a sample sentence. Sample sentences are used for testing.";
-        String targetWord = "sample";
+	public void countFrequency(String word, String sentence) {
+		String[] words = sentence.split("\\s+");
 
-        int frequency = wordFrequencyCounter.countFrequency(targetWord, sentence);
-
-        System.out.println("Frequency of '" + targetWord + "': " + frequency);
-
-        Map<String, Integer> wordFrequencyMap = wordFrequencyCounter.getWordFrequencyMap();
-        System.out.println("Word frequencies: " + wordFrequencyMap);
-    }
+        // Count the frequency of the given word
+        for (String w : words) {
+            if (w.equalsIgnoreCase(word)) {
+                _ctr++;
+            }
+        }
+	}
 
 }
