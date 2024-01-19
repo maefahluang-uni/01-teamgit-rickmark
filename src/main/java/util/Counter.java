@@ -30,26 +30,31 @@ public class Counter {
 
 	// TODO: dev1- method for increment to closest even number
 	public void incrementToEven() {
-        // Increment _ctr by 1 to make it an odd number (if it's not already)
-        _ctr++;
-
-        // Check if the current value of _ctr is even
-        if (_ctr % 2 != 0) {
-            // If not, increment again to make it even
-            _ctr++;
-        }
-    }
+		increment();
+		// Check if the current value of _ctr is even
+		if (_ctr % 2 == 0) {
+			// Already even, no need to increment
+			System.out.println("Counter is already even.");
+		} else {
+			// Increment to the closest even number
+			_ctr = (_ctr % 2 == 0) ? _ctr : _ctr + 1;
+			System.out.println("Incremented to the closest even number.");
+		}
+	}
 
 	// TODO: dev1- method for decrement to closest even number
 	public void decrementToEven() {
-        // Decrement _ctr by 1 to make it an odd number (if it's not already)
-        _ctr--;
-
-        // Check if the current value of _ctr is even
-        if (_ctr % 2 != 0) {
-            // If not, decrement again to make it even
-            _ctr--;
-        }
+		decrement();
+		// Check if the current value of _ctr is even
+		if (_ctr % 2 == 0) {
+			// Already even, no need to decrement
+			System.out.println("Counter is already even.");
+		} else {
+			// Decrement to the closest even number
+			_ctr = (_ctr % 2 == 0) ? _ctr : _ctr - 1;
+			System.out.println("Decremented to the closest even number.");
+		}
+	}
     }
 
 	// TODO: dev2- method for increment to closest prime number
