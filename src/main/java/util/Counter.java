@@ -54,13 +54,45 @@ public class Counter {
 
 	// TODO: dev2- method for increment to closest prime number
 	public void incrementToPrime() {
-		_ctr = -99;
-	}
+        // Increment _ctr until a prime number is found
+        while (!isPrime(_ctr)) {
+            _ctr++;
+        }
+    }
+
+    // Helper method to check if a number is prime
+    private boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 	// TODO: dev2- method for decrement to closest prime number
 	public void decrementToPrime() {
-		_ctr = -99;
-	}
+        // Decrement _ctr until a prime number is found
+        while (!isPrime(_ctr)) {
+            _ctr--;
+        }
+    }
+
+    // Helper method to check if a number is prime
+    private boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 	// TODO: dev3- count the frequency of word in sentence,
 	// refactor source code from dev1 and dev2
