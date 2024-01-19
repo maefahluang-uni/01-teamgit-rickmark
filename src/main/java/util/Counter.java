@@ -50,8 +50,17 @@ public class Counter {
 
 	// TODO: dev3- count the frequency of word in sentence,
 	// refactor source code from dev1 and dev2
-	public void countFrequency(String word, String sentence) {
-		_ctr = -99;
-	}
+	public static void main(String[] args) {
+        WordFrequencyCounter wordFrequencyCounter = new WordFrequencyCounter();
+        String sentence = "This is a sample sentence. Sample sentences are used for testing.";
+        String targetWord = "sample";
+
+        int frequency = wordFrequencyCounter.countFrequency(targetWord, sentence);
+
+        System.out.println("Frequency of '" + targetWord + "': " + frequency);
+
+        Map<String, Integer> wordFrequencyMap = wordFrequencyCounter.getWordFrequencyMap();
+        System.out.println("Word frequencies: " + wordFrequencyMap);
+    }
 
 }
