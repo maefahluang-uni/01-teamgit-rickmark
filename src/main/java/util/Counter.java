@@ -54,40 +54,28 @@ public class Counter {
 
 	// TODO: dev2- method for increment to closest prime number
 	public void incrementToPrime() {
-        // Increment _ctr until a prime number is found
-        while (!isPrime(_ctr)) {
+		increment();
+		while (!isPrime(_ctr)) {
             _ctr++;
         }
-    }
-
-    // Helper method to check if a number is prime
-    private boolean isPrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
+	}
 
 	// TODO: dev2- method for decrement to closest prime number
 	public void decrementToPrime() {
-        // Decrement _ctr until a prime number is found
-        while (!isPrime(_ctr)) {
+		decrement();
+		while (!isPrime(_ctr)) {
             _ctr--;
         }
-    }
+	}
 
-    // Helper method to check if a number is prime
-    private boolean isPrime(int number) {
-        if (number <= 1) {
+
+	 // Check if a number is prime
+	 private boolean isPrime(int n) {
+        if (n <= 1) {
             return false;
         }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
                 return false;
             }
         }
