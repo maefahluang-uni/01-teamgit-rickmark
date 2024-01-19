@@ -55,7 +55,7 @@ public class Counter {
 			System.out.println("Decremented to the closest even number.");
 		}
 	}
-    }
+    
 
 	// TODO: dev2- method for increment to closest prime number
 	public void incrementToPrime() {
